@@ -51,7 +51,35 @@ export const SCENE = [
   },
 ];
 
-export const HEROES = ["leather", "mike", "jay", "ghost"];
+export const appVersion = window.App.version;
+export const HEROES_scenario_2 = ["leather", "mike", "jay", "ghost"];
+export const HEROES_scenario_11 = ["jay", "mike", "ghost", "leather"];
+export const HEROES_scenario_12 = ["mike", "ghost", "leather", "jay"];
+export const HEROES_scenario_13 = ["ghost", "leather", "jay", "mike"];
+export const HEROES_scenario_14 = ["leather", "jay", "mike", "ghost"];
+export const HEROES_scenario_15 = ["leather", "mike", "jay", "ghost"];
+export const TITLES_scenario_2 = ["title1", "title2", "title3", "title4"];
+export const TITLES_scenario_11 = ["title3", "title2", "title4", "title1"];
+export const TITLES_scenario_12 = ["title2", "title4", "title1", "title3"];
+export const TITLES_scenario_13 = ["title4", "title1", "title3", "title2"];
+export const TITLES_scenario_14 = ["title1", "title3", "title2", "title4"];
+export const TITLES_scenario_15 = ["title1", "title2", "title3", "title4"];
+export const HEROES = {
+  scenario_2: HEROES_scenario_2,
+  scenario_11: HEROES_scenario_11,
+  scenario_12: HEROES_scenario_12,
+  scenario_13: HEROES_scenario_13,
+  scenario_14: HEROES_scenario_14,
+  scenario_15: HEROES_scenario_15,
+};
+export const TITLES = {
+  scenario_2: TITLES_scenario_2,
+  scenario_11: TITLES_scenario_11,
+  scenario_12: TITLES_scenario_12,
+  scenario_13: TITLES_scenario_13,
+  scenario_14: TITLES_scenario_14,
+  scenario_15: TITLES_scenario_15,
+};
 export const POSITION = {
   choices: Screen.phoneProportions ? [0, 380, 0, 480] : [0, 430, 0, 480],
   mistakes: Screen.phoneProportions ? [0, 180, 0, 230] : [0, 180, 0, 280],
@@ -77,6 +105,7 @@ export const SCALE = {
 export const POSITIONS_PHONE = {
   woman: Screen.phoneProportions ? [300, -150, 0, -150] : [300, 0, 0, 0],
   choices: Screen.phoneProportions ? [300, 0, 0, -200] : [300, 0, 0, -130],
+  hero: Screen.phoneProportions ? 1200 : 1500,
 };
 export const POSITIONS = {
   word:
@@ -87,12 +116,16 @@ export const POSITIONS = {
     Screen.iphoneSEProportions || Screen.phoneProportions
       ? POSITIONS_PHONE.keyboard
       : [280, 0, 0, -120],
+  hero:
+    Screen.iphoneSEProportions || Screen.phoneProportions
+      ? POSITIONS_PHONE.hero
+      : 1300,
 };
 
 const SCALES_PHONE = {
   woman: Screen.phoneProportions
     ? [0.46, 0.46, 0.6, 0.6]
-    : [0.5, 0.5, 0.55, 0.55],
+    : [0.52, 0.52, 0.55, 0.55],
   img: Screen.phoneProportions ? [0.7, 0.7, 0.7, 0.7] : [0.75, 0.75, 0.6, 0.6],
   image_bg: Screen.phoneProportions
     ? [0.8, 1, 1.4, 1.4]

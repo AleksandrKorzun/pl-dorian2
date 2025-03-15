@@ -1,25 +1,16 @@
 import ParentScene from "@holywater-tech/ads-builder/framework/components/Scene";
 import Background from "@holywater-tech/ads-builder/framework/components/ui/Background";
-// import Header from "./Header";
-// import Keyboard from "./Shelf";
-// import Word from "./Word";
-// import { EVENTS, SCALES, WORD } from "./constants/Constants";
-// import { Modal } from "./Modal";
-
-// import Buttons from "./Buttons";
-// import Title from "./Title";
-// import Utils from "@holywater-tech/ads-builder/framework/Utils";
-// import { Shelfs } from "./Shelfs";
 import Items from "./Items";
-import { EVENTS, SCENE } from "./constants/Constants";
+import { appVersion } from "./constants/Constants";
 import Balance from "./Balance";
 import Hero from "./Hero";
-import Utils from "@holywater-tech/ads-builder/framework/Utils";
-import Title from "./Title";
 
 export default class Game extends ParentScene {
   create() {
-    this.addBackground("bg");
+    this.addBackground(
+      appVersion === "scenario_14" ? "bg_red" : "bg",
+      appVersion === "scenario_14" ? { isAdaptive: false } : {}
+    );
     // this.addCTA();
     // this.initListeners();
     this.sceneNum = 0;
@@ -34,9 +25,12 @@ export default class Game extends ParentScene {
   }
 
   addBackground(bg, options = {}) {
-    this.bg = new Background(this, bg, true, [1.5, 1.5, 1.1, 1.1]).setDepth(
-      options.depth || 4
-    );
+    this.bg = new Background(
+      this,
+      bg,
+      appVersion === "scenario_14" ? false : true,
+      [1.5, 1.5, 1.1, 1.1]
+    ).setDepth(options.depth || 4);
     this.mainContainer.add([this.bg]);
     this.sort();
   }
@@ -117,7 +111,7 @@ export default class Game extends ParentScene {
       .setDepth(37)
       .setCustomAlign("Bottom")
       .setOrigin(0.5, 0.5)
-      .setCustomScale(0.7, 0.7, 0.5, 0.5)
+      .setCustomScale(0.6, 0.6, 0.5, 0.5)
       .setCustomPosition(0, -200, 0, -200);
     this.couple_glow = this.add
       .image(0, 0, "atlas", "glow")
@@ -125,7 +119,7 @@ export default class Game extends ParentScene {
       .setDepth(35)
       .setCustomAlign("Bottom")
       .setOrigin(0.5, 0.5)
-      .setCustomScale(0.7, 0.7, 0.5, 0.5)
+      .setCustomScale(0.6, 0.6, 0.5, 0.5)
       .setCustomPosition(0, -215, 0, -215);
 
     this.play = this.add

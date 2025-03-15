@@ -19,9 +19,9 @@ module.exports = {
   ios: "https://apps.apple.com/us/app/dorian-comics-game-platform/id1529215455",
   android:
     "https://play.google.com/store/apps/details?id=com.dorian.playtogether&hl=en_US",
-  currentVersion: "default", // после изменения значения нужно заново запустить npm run dev
+  currentVersion: "scenario_15",
   versions: {
-    default: {
+    scenario_2: {
       lang: "en",
       audio: [],
       fonts: [],
@@ -29,39 +29,45 @@ module.exports = {
       spine: [],
       textures: [],
     },
-    mip_beach: {
+    scenario_11: {
       lang: "en",
       audio: [],
       fonts: [],
       sheets: [],
       spine: [],
-      textures: ["bg_beach_horizontal", "bg_beach_vertical"],
+      textures: [],
     },
-    sip_winter: {
+    scenario_12: {
       lang: "en",
       audio: [],
       fonts: [],
       sheets: [],
       spine: [],
-      textures: [
-        "bg_sip_horizontal",
-        "bg_sip_vertical",
-        "bg_winter_horizontal",
-        "bg_winter_vertical",
-      ],
+      textures: [],
     },
-    sip_beach: {
+    scenario_13: {
       lang: "en",
       audio: [],
       fonts: [],
       sheets: [],
       spine: [],
-      textures: [
-        "bg_sip_horizontal",
-        "bg_sip_vertical",
-        "bg_beach_horizontal",
-        "bg_beach_vertical",
-      ],
+      textures: [],
+    },
+    scenario_14: {
+      lang: "en",
+      audio: [],
+      fonts: [],
+      sheets: [],
+      spine: [],
+      textures: [],
+    },
+    scenario_15: {
+      lang: "en",
+      audio: [],
+      fonts: [],
+      sheets: [],
+      spine: [],
+      textures: [],
     },
   },
 };

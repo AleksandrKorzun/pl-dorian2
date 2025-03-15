@@ -1,4 +1,10 @@
-import { HEROES, SCALES } from "./constants/Constants";
+import {
+  appVersion,
+  HEROES,
+  POSITIONS,
+  SCALES,
+  TITLES,
+} from "./constants/Constants";
 
 export default class Hero extends Phaser.GameObjects.Container {
   constructor(scene, count) {
@@ -23,15 +29,17 @@ export default class Hero extends Phaser.GameObjects.Container {
     });
   }
   addHeroes() {
-    HEROES.forEach((hero, i) => {
+    console.log("appVersion", appVersion);
+    HEROES[appVersion].forEach((hero, i) => {
       const x = this.scene.currentHero === i ? 0 : -2700;
       this[`hero${i}`] = this.scene.add
-        .image(x, 0, hero)
+        .image(x, appVersion === "scenario_15" ? POSITIONS.hero : 0, hero)
         .setDepth(7)
+        .setScale(appVersion === "scenario_15" ? 1.8 : 1)
         .setOrigin(0.5, 1);
 
       this[`title${i}`] = this.scene.add
-        .image(0, -1000, `title${i + 1}`)
+        .image(0, -1000, TITLES[appVersion][i])
         .setDepth(8)
         .setScale(0)
         .setOrigin(0.5, 0);
